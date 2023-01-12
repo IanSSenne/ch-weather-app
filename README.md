@@ -15,7 +15,7 @@ To create a site that allows you to view a forcast and keep a short history of q
 | html       | used for defining the structure of the page |
 | prettier   | used for formatting of files                |
 
-## The Final Version of the Javascript Quiz Website
+## The Final Version of the Weather Forcast App
 
 ![Forecast App](./readme-assets/page_0.png)
 
