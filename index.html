@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather Forecast</title>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+	</head>
+	<body>
+		<nav class="navbar">
+			<h1 class="text-center">Weather Forcast</h1>
+		</nav>
+		<div class="content">
+			<div class="select">
+				<div class="card">
+					<div class="card-header">
+						<h3>Enter City</h3>
+					</div>
+					<input type="text" id="city" placeholder="Enter City" />
+					<button id="submit">Submit</button>
+				</div>
+				<div id="known-cities"></div>
+			</div>
+			<div class="forecast">
+				<div id="weather"></div>
+				<div id="forecast"></div>
+			</div>
+		</div>
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>
