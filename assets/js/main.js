@@ -36,6 +36,7 @@ const renderWeather = async (cityName) => {
 	const cityEl = document.createElement("h1");
 	cityEl.innerText = city.name;
 	weatherEl.innerHTML = "";
+	forecastEl.innerHTML = "";
 	weatherEl.appendChild(cityEl);
 
 	const currentWeatherEl = document.createElement("div");
@@ -51,7 +52,7 @@ const renderWeather = async (cityName) => {
 
 	const renderWeatherItem = (item) => {
 		const { dt_txt, main, weather } = item;
-		const [date, time] = dt_txt.split(" ");
+		const [date] = dt_txt.split(" ");
 
 		const weatherItemEl = document.createElement("div");
 		weatherItemEl.classList.add("weather-item");
@@ -60,19 +61,19 @@ const renderWeather = async (cityName) => {
 		const dateEl = document.createElement("h2");
 		dateEl.innerText = date;
 
-		const timeEl = document.createElement("h3");
-		timeEl.innerText = time;
+		const windEl = document.createElement("p");
+		windEl.innerText = `Wind: ${Math.round(item.wind.speed)} mph`;
 
-		const tempEl = document.createElement("h3");
+		const tempEl = document.createElement("p");
 		tempEl.innerText = `${Math.round(main.temp)}°`;
 
-		const weatherTitleEl = document.createElement("h3");
+		const weatherTitleEl = document.createElement("p");
 		weatherTitleEl.innerText = weather[0].main;
 
 		weatherItemEl.appendChild(dateEl);
-		weatherItemEl.appendChild(timeEl);
-		weatherItemEl.appendChild(tempEl);
 		weatherItemEl.appendChild(weatherTitleEl);
+		weatherItemEl.appendChild(tempEl);
+		weatherItemEl.appendChild(windEl);
 
 		return weatherItemEl;
 	};
