@@ -7,13 +7,13 @@ if (localStorage.getItem("knownCities")) {
 
 function getIconImage(iconCode) {
 	let image = new Image();
-	image.src = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+	image.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 	return image;
 }
 
 const getWeather = async (city) => {
 	const [{ lat, lon }] = await fetch(
-		`http://api.openweathermap.org/geo/1.0/direct?limit=1&q=${city}&appid=${appId}`
+		`https://api.openweathermap.org/geo/1.0/direct?limit=1&q=${city}&appid=${appId}`
 	).then((response) => response.json());
 	const endpoint = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${appId}&units=imperial`;
 
